@@ -28,7 +28,7 @@ public class BeerLoader implements CommandLineRunner {
                     .beerStyle("IPA")
                     .quantityToBrew(200)
                     .minOnHand(12)
-                    .upc(1L)
+                    .upc("1")
                     .price(new BigDecimal("12.95"))
                     .build());
             beerRepository.save(Beer.builder()
@@ -36,7 +36,7 @@ public class BeerLoader implements CommandLineRunner {
                     .beerStyle("PALE_ALE")
                     .quantityToBrew(200)
                     .minOnHand(12)
-                    .upc(2L)
+                    .upc("2")
                     .price(new BigDecimal("11.95"))
                     .build());
         }
