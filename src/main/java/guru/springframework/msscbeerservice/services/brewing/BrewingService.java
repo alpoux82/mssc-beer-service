@@ -28,6 +28,7 @@ public class BrewingService {
     @Scheduled(fixedRate = 5000)
     public void checkForLowInventory() {
         List<Beer> beers = beerRepository.findAll();
+        //TODO check null list
         beers.forEach(beer -> {
             Integer invQOH = beerInventoryService.getOnHandInventory(beer.getId());
 
