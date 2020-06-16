@@ -1,7 +1,7 @@
 package guru.springframework.msscbeerservice.services.brewing;
 
 import guru.springframework.msscbeerservice.domain.Beer;
-import guru.springframework.msscbeerservice.events.BrewBeerEvent;
+import guru.sfg.brewery.model.events.BrewBeerEvent;
 import guru.springframework.msscbeerservice.repositories.BeerRepository;
 import guru.springframework.msscbeerservice.services.inventory.BeerInventoryService;
 import guru.springframework.msscbeerservice.web.mappers.BeerMapper;
@@ -28,7 +28,7 @@ public class BrewingService {
     @Scheduled(fixedRate = 5000)
     public void checkForLowInventory() {
         List<Beer> beers = beerRepository.findAll();
-        //TODO check null list
+        //TODO check null list Collections.emptyList()
         beers.forEach(beer -> {
             Integer invQOH = beerInventoryService.getOnHandInventory(beer.getId());
 
